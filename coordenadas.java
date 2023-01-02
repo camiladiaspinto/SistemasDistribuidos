@@ -23,9 +23,9 @@ public class coordenadas implements Serializable {
     }
 
     //função para calcular a distancia manhattan
-    // public calculardistancia(int x1, int y1,int x2, int y2){
-    //  return Math.abs(x1-x2) + Math.abs(y1-y2);
-    //}
+    public int calculardistancia(int x, int y){
+        return Math.abs(this.x-x) + Math.abs(this.y-y);
+    }
 
 
     public boolean equals(Object o) {
