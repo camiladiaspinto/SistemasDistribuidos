@@ -3,11 +3,17 @@ import java.net.Socket;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Scanner;
+
 
 public class cliente {
 
+    public cliente(Socket socket,Utilizador utilizador){
+
+    }
     //quando insiro dados tenho de meter out
-    //out por causa dos writes 
+    //out por causa dos writes
+
     public static void main (String[] args) throws IOException {
         Socket socket = new Socket("localhost", 12345);
 
@@ -36,6 +42,17 @@ public class cliente {
                     out.flush();
                     out.writeUTF(palavrapasse);
                     out.flush();
+                    Utilizador user= new Utilizador(nome,palavrapasse);
+                    cliente cl = new cliente(socket, user);
+                    System.out.println("Insira a sua localização para procurar trotinete X:");
+                    String locX=stdin.readLine();
+                    out.write(Integer.parseInt(locX));
+                    out.flush();
+                    System.out.println("Y:");
+                    String locY=stdin.readLine();
+                    out.write(Integer.parseInt(locY));
+                    out.flush();
+
                     break;
                 case 2:
                     System.out.println("Login:");
@@ -46,6 +63,16 @@ public class cliente {
                     out.writeUTF(nome1);
                     out.flush();
                     out.writeUTF(palavrapasse2);
+                    out.flush();
+                    Utilizador user1= new Utilizador(nome1,palavrapasse2);
+                    cliente cl1 = new cliente(socket, user1);
+                    System.out.println("Insira a sua localização para procurar trotinete X:");
+                    locX=stdin.readLine();
+                    out.write(Integer.parseInt(locX));
+                    out.flush();
+                    System.out.println("Y:");
+                    locY=stdin.readLine();
+                    out.write(Integer.parseInt(locY));
                     out.flush();
                     break;
                 case 0:
