@@ -1,3 +1,2 @@
 # SistemasDistribuidos
-github de um trabalho parecido: https://github.com/rita-peixoto/uminho-lei/tree/main/3YEAR/1st/SD
-link para o nosso relatório:https://www.overleaf.com/read/kbgfmrhjjrdt
+O objetivo principal do trabalho prático é implementar uma plataforma de gestão de uma frota de trotinetes elétricas, sob a forma de um par cliente-servidor em Java, utilizando sockets e threads. 
